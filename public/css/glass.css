@@ -1,0 +1,110 @@
+.glass,
+.glass-strong,
+.glass-soft {
+  position: relative;
+  border: 1px solid var(--glass-border);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.42));
+  box-shadow: var(--shadow-lg), var(--shadow-inset);
+  backdrop-filter: blur(26px) saturate(178%);
+  -webkit-backdrop-filter: blur(26px) saturate(178%);
+}
+
+.glass-strong {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.58));
+}
+
+.glass-soft {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0.25));
+  box-shadow: var(--shadow-md), var(--shadow-inset);
+}
+
+.panel {
+  border-radius: var(--radius-xl);
+  padding: 20px;
+}
+
+.panel--flush {
+  padding: 0;
+}
+
+.liquid {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.liquid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  background: radial-gradient(220px circle at var(--mx, 50%) var(--my, 40%), rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.2) 38%, transparent 68%);
+  transition: opacity 0.28s var(--ease-soft);
+}
+
+.liquid:hover::before {
+  opacity: 0.82;
+}
+
+.liquid > * {
+  position: relative;
+  z-index: 1;
+}
+
+.liquid::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 12%;
+  width: 76%;
+  height: 1px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.98), transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.sheen::after {
+  content: "";
+  position: absolute;
+  top: -55%;
+  left: -30%;
+  width: 50%;
+  height: 210%;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.42), transparent);
+  transform: rotate(22deg);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease-soft), transform 0.7s var(--ease-spring);
+}
+
+.sheen:hover::after {
+  opacity: 1;
+  transform: translateX(230%) rotate(22deg);
+}
+
+.lift {
+  transition: transform 0.42s var(--ease-spring), box-shadow 0.42s var(--ease-soft), border-color 0.42s var(--ease-soft);
+}
+
+.lift:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.98);
+  box-shadow: var(--shadow-xl), var(--shadow-inset);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass,
+  .glass-strong,
+  .glass-soft {
+    background: rgba(255, 255, 255, 0.93);
+  }
+}

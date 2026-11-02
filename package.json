@@ -1,0 +1,64 @@
+{
+  "name": "sakura-adb-toolbox",
+  "productName": "Sakura ADB Toolbox",
+  "version": "1.0.0",
+  "description": "A liquid-glass desktop ADB toolbox for managing Android devices.",
+  "author": "NAHIDA100",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NAHIDA100/Sakura-ADB-Toolbox.git"
+  },
+  "homepage": "https://github.com/NAHIDA100/Sakura-ADB-Toolbox#readme",
+  "bugs": {
+    "url": "https://github.com/NAHIDA100/Sakura-ADB-Toolbox/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "electron . --dev",
+    "start": "electron .",
+    "web": "node web/launcher.cjs --browser",
+    "web:start": "node web/server.cjs",
+    "test": "node --test test/parsers.test.cjs test/command.test.cjs test/stores.test.cjs test/tasks.test.cjs",
+    "dist": "electron-builder --win zip --x64",
+    "dist:dir": "electron-builder --win dir --x64"
+  },
+  "devDependencies": {
+    "electron": "44.5.1",
+    "electron-builder": "26.18.0"
+  },
+  "build": {
+    "appId": "com.sakura.adbtoolbox",
+    "productName": "Sakura ADB Toolbox",
+    "asar": true,
+    "compression": "normal",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "electron/**/*",
+      "public/**/*",
+      "web/appmeta.cjs",
+      "web/sakura_appmeta.apk",
+      "build/icon.png",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "zip",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "artifactName": "Sakura-ADB-Toolbox-${version}-win-${arch}.${ext}"
+    }
+  }
+}

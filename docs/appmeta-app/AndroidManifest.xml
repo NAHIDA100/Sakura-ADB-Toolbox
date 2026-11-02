@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="sakura.meta">
+  <uses-sdk android:minSdkVersion="30" android:targetSdkVersion="30" />
+  <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+  <application android:label="Sakura 元数据" android:debuggable="true">
+    <activity
+        android:name=".DumpActivity"
+        android:exported="true"
+        android:theme="@android:style/Theme.Translucent.NoTitleBar"
+        android:excludeFromRecents="true"
+        android:noHistory="true" />
+  </application>
+</manifest>

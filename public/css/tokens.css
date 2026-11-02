@@ -1,0 +1,73 @@
+:root {
+  color-scheme: light;
+  --font-sans: "Segoe UI Variable Display", "Segoe UI", "Microsoft YaHei UI", "Microsoft YaHei", "PingFang SC", sans-serif;
+  --font-mono: "Cascadia Code", "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+
+  --bg: #fbf8ff;
+  --ink: #2b2330;
+  --ink-soft: #5f5369;
+  --muted: #948a9e;
+  --faint: #b6acbd;
+
+  --pink: #ff4f8f;
+  --pink-strong: #ed3d7c;
+  --pink-soft: #ffe4ef;
+  --pink-wash: #fff1f6;
+  --violet: #a77bf3;
+  --violet-soft: #f0e8ff;
+  --blue: #5b9cf8;
+  --blue-soft: #e7f1ff;
+  --mint: #34c58f;
+  --mint-soft: #e3f9f0;
+  --amber: #eea33d;
+  --amber-soft: #fff2d9;
+  --danger: #e94f64;
+  --danger-soft: #ffe8eb;
+
+  --white: #ffffff;
+  --glass: rgba(255, 255, 255, 0.57);
+  --glass-strong: rgba(255, 255, 255, 0.74);
+  --glass-soft: rgba(255, 255, 255, 0.38);
+  --glass-border: rgba(255, 255, 255, 0.9);
+  --line: rgba(124, 99, 140, 0.11);
+  --line-strong: rgba(124, 99, 140, 0.18);
+
+  --shadow-xl: 0 40px 100px -48px rgba(141, 84, 159, 0.46);
+  --shadow-lg: 0 30px 70px -40px rgba(141, 84, 159, 0.38);
+  --shadow-md: 0 18px 44px -28px rgba(141, 84, 159, 0.34);
+  --shadow-sm: 0 8px 24px -18px rgba(141, 84, 159, 0.32);
+  --shadow-pink: 0 18px 40px -22px rgba(255, 79, 143, 0.55);
+  --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.95), inset 0 -1px 0 rgba(255, 255, 255, 0.34);
+
+  --radius-xxl: 32px;
+  --radius-xl: 26px;
+  --radius-lg: 21px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+  --radius-xs: 9px;
+
+  --sidebar-w: 276px;
+  --topbar-h: 66px;
+  --shell-gap: 16px;
+  --shell-pad: 16px;
+
+  --ease-spring: cubic-bezier(0.2, 1, 0.32, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --speed: 0.34s;
+}
+
+@media (max-width: 1280px) {
+  :root {
+    --sidebar-w: 244px;
+    --shell-gap: 12px;
+    --shell-pad: 12px;
+    --topbar-h: 60px;
+  }
+}
+
+@media (max-width: 1120px) {
+  :root {
+    --sidebar-w: 228px;
+  }
+}

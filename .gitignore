@@ -1,0 +1,12 @@
+node_modules/
+release/
+web-data/
+docs/appmeta-app/debug.keystore
+docs/appmeta-app/build*/
+docs/appmeta-app/icons*.txt
+docs/syntax-tmp/
+docs/syntax-check/
+*.log
+*.dmp
+.DS_Store
+Thumbs.db
